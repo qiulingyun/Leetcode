@@ -11,22 +11,18 @@ public class Subsets {
             return null;
         }
         List<List<Integer>> results = new ArrayList<>();
-        getSubSets(list, 0, results, null);
+        getSubSets(list, 0, results, new LinkedList<>());
         return results;
     }
 
     public void getSubSets(List<Integer> list, int index, List<List<Integer>> results, LinkedList<Integer> currList){
-        if (index >= list.size()){
-            List<Integer> tmp = new ArrayList<>();
-            tmp.addAll(currList);
-            results.add(tmp);
-            return;
-        }
+
+        List<Integer> tmp = new ArrayList<>();
+        tmp.addAll(currList);
+        results.add(tmp);
+
 
         for (int i = index; i < list.size(); i++){
-            if (currList == null){
-                currList = new LinkedList<>();
-            }
             currList.addLast(list.get(i));
             getSubSets(list, i+1, results, currList);
             currList.removeLast();
