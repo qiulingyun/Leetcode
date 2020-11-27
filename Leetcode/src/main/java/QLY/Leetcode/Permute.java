@@ -5,6 +5,9 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * 全排列
+ */
 public class Permute {
     public List<List<Integer>> permute(int[] nums){
         if (nums == null || nums.length == 0){
