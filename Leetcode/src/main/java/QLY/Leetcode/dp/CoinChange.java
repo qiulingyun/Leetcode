@@ -1,5 +1,8 @@
-package QLY.Leetcode;
+package QLY.Leetcode.dp;
 
+/**
+ * 322. 零钱兑换
+ */
 public class CoinChange {
     public int coinChange(int[] coins, int amount) {
         if (amount == 0 || coins == null || coins.length == 0)

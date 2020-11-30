@@ -1,4 +1,4 @@
-package QLY.Leetcode;
+package QLY.Leetcode.dp;
 
 public class Rob {
 
