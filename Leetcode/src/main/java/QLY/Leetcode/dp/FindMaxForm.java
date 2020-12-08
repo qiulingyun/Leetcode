@@ -1,4 +1,4 @@
-package QLY.Leetcode;
+package QLY.Leetcode.dp;
 
 public class FindMaxForm {
 //    public int findMaxForm(String[] strs, int m, int n) {

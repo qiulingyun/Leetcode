@@ -1,4 +1,4 @@
-package QLY.Leetcode;
+package QLY.Leetcode.tree;
 
 import java.util.LinkedList;
 

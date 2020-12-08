@@ -26,6 +26,6 @@ public class SmallerNumbersThanCurrent {
     }
     public static void main(String[] args) {
         SmallerNumbersThanCurrent SmallerNumbersThanCurrent = new SmallerNumbersThanCurrent();
-        System.out.println(SmallerNumbersThanCurrent.smallerNumbersThanCurrent(new int[]{8,1,2,2,3}).toString());
+        System.out.println(Arrays.toString(SmallerNumbersThanCurrent.smallerNumbersThanCurrent(new int[]{8,1,2,2,3})));
     }
 }

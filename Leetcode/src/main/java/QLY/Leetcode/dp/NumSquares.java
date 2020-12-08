@@ -1,6 +1,4 @@
-package QLY.Leetcode;
-
-import java.util.Arrays;
+package QLY.Leetcode.dp;
 
 public class NumSquares {
     public int numSquares(int n) {

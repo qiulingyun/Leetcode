@@ -1,4 +1,4 @@
-package QLY.Leetcode;
+package QLY.Leetcode.tree;
 
 public class KthSmallestBST {
     public class TreeNode {
