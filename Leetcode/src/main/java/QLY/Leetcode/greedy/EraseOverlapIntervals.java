@@ -51,22 +51,34 @@ public class EraseOverlapIntervals {
          */
 
         int[] now = intervals[0];
-        int index = 1;
+//        int index = 1;
         int count = 0;
-//        PriorityQueue<Integer> ends = new PriorityQueue<>();
 
-        while (index < intervals.length){
-            while (index < intervals.length && now[1] > intervals[index][0]){
-                now[1] = Math.min(now[1], intervals[index][1]);
+//        while (index < intervals.length){
+//            while (index < intervals.length && now[1] > intervals[index][0]){
+//                now[1] = Math.min(now[1], intervals[index][1]);
+//                count++;
+//                index++;
+//            }
+//            if (index < intervals.length){
+//                now[0] = intervals[index][0];
+//                now[1] = intervals[index][1];
+//                index++;
+//            }
+//
+//        }
+
+        for (int i = 1; i < intervals.length; i++){
+            int[] interval = intervals[i];
+            if (now[1] > interval[0]){
+                if (now[1] > interval[1]){
+                    now[1] = interval[1];
+                }
                 count++;
-                index++;
+            }else {
+                now[0] = interval[0];
+                now[1] = interval[1];
             }
-            if (index < intervals.length){
-                now[0] = intervals[index][0];
-                now[1] = intervals[index][1];
-                index++;
-            }
-
         }
 
         return count;
@@ -76,6 +88,6 @@ public class EraseOverlapIntervals {
 
     public static void main(String[] args) {
         EraseOverlapIntervals eraseOverlapIntervals = new EraseOverlapIntervals();
-        System.out.println(eraseOverlapIntervals.eraseOverlapIntervals(new int[][]{{1,2}, {2,3}}));
+        System.out.println(eraseOverlapIntervals.eraseOverlapIntervals(new int[][]{{1,2}, {2,3}, {3,4}, {1,3}}));
     }
 }

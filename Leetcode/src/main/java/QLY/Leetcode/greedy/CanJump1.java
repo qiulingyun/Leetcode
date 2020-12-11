@@ -1,4 +1,4 @@
-package QLY.Leetcode.dp;
+package QLY.Leetcode.greedy;
 
 /**
  * 55. 跳跃游戏
