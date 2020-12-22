@@ -1,4 +1,4 @@
-package QLY.Leetcode.dp;
+package QLY.Leetcode.graph;
 
 import java.util.*;
 
