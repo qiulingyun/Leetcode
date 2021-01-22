@@ -1,5 +1,6 @@
 package QLY.Leetcode;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -57,6 +58,19 @@ public class AfterPayTest2 {
         Card card = new Card(Arrays.asList(new Token[]{new Token(TokenValue.BLACK), new Token(TokenValue.BLACK)}));
         System.out.println(afterPayTest2.canPurchase(card));
 
+        System.out.println("EnumSet no =================================================");
 
+//        EnumSet<TokenValue> wallets = EnumSet.of(TokenValue.BLUE, TokenValue.BLUE, TokenValue.GREEN);
+//        EnumSet<TokenValue> cards = EnumSet.of(TokenValue.BLUE, TokenValue.GREEN, TokenValue.GREEN);
+//        System.out.println("EnumSet contains:" + wallets.containsAll(cards));
+
+        System.out.println("List no=================================================");
+//        List<TokenValue> wallet = Arrays.asList(TokenValue.BLUE, TokenValue.BLUE, TokenValue.GREEN);
+//        List<TokenValue> cards = Arrays.asList(TokenValue.BLUE, TokenValue.GREEN,  TokenValue.GREEN);
+//        System.out.println("List containsAll:" + wallet.containsAll(cards));
+//        System.out.println("List retainAll:" + wallet.retainAll(cards));
+
+        System.out.println("List no=================================================");
+        SortedMap<TokenValue, Integer> wallet = new TreeMap<>();
     }
 }
