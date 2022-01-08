@@ -1,4 +1,4 @@
-package QLY.Leetcode.array;
+package QLY.Leetcode.binarySearch;
 
 /**
  * https://leetcode-cn.com/problems/search-insert-position/
