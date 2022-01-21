@@ -10,11 +10,11 @@ package QLY.Leetcode.unionfind;
 public class CouplesHoldingHands {
     public int minSwapsCouples(int[] row) {
         int n = row.length / 2;
-        UnionFind unionFind = new UnionFind(n);
+        UnionFindNotRank unionFindNotRank = new UnionFindNotRank(n);
         for (int i = 0; i < row.length; i+=2) {
-            unionFind.union(row[i] / 2, row[i+1] / 2);
+            unionFindNotRank.union(row[i] / 2, row[i+1] / 2);
         }
-        return n - unionFind.getCount();
+        return n - unionFindNotRank.getCount();
     }
 
     public static void main(String[] args) {

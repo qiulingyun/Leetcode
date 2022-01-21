@@ -1,48 +1,36 @@
 package QLY.Leetcode.unionfind;
 
 public class UnionFind {
-    private int[] parent;
-    private int count;
+    int[] parent;
+    int[] rank;
 
     public UnionFind(int n) {
         parent = new int[n];
+        rank = new int[n];
         for (int i = 0; i < n; i++) {
             parent[i] = i;
+            rank[i] = 1;
         }
-        count = n;
     }
 
     public int find(int x){
-        if (x == parent[x]){
+        if (parent[x] == x){
             return x;
         }
 
         parent[x] = find(parent[x]);
         return parent[x];
-
-        //return parent[x] == x? x: (parent[x] = find2(parent[x]));
     }
 
-    public int find2(int x){
-        while (x != parent[x]){
-            parent[x] = parent[parent[x]];
-            x = parent[x];
-        }
+    public void union(int x,  int y){
+        int parentx = find(x);
+        int parenty = find(y);
+        if (rank[parentx] >= rank[parenty])
+            parent[parenty] = parentx;
+        else
+            parent[parentx] = parenty;
 
-        return x;
-    }
-
-    public void union(int x, int y){
-        int xparent = find(x);
-        int yparent = find(y);
-        if (xparent == yparent)
-            return;
-
-        parent[xparent] = yparent;
-        count--;
-    }
-
-    public int getCount() {
-        return count;
+        if (parentx != parenty && rank[parentx] == rank[parenty])
+            rank[parentx]++;
     }
 }
