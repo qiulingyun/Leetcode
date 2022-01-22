@@ -33,4 +33,8 @@ public class UnionFind {
         if (parentx != parenty && rank[parentx] == rank[parenty])
             rank[parentx]++;
     }
+
+    public boolean isConnected(int x, int y){
+        return find(x) == find(y);
+    }
 }
