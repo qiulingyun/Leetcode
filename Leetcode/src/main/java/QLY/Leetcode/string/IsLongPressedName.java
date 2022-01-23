@@ -1,4 +1,4 @@
-package QLY.Leetcode;
+package QLY.Leetcode.string;
 
 public class IsLongPressedName {
     public boolean isLongPressedName(String name, String typed) {

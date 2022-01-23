@@ -1,9 +1,7 @@
-package QLY.Leetcode;
+package QLY.Leetcode.graph;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
-import java.util.List;
 
 public class SlidingPuzzle {
     private class Board{

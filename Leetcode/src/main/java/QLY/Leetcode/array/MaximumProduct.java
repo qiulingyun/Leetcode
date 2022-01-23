@@ -1,4 +1,4 @@
-package QLY.Leetcode;
+package QLY.Leetcode.array;
 
 import java.util.ArrayList;
 import java.util.HashSet;

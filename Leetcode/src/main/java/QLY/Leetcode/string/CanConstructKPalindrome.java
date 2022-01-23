@@ -1,4 +1,4 @@
-package QLY.Leetcode;
+package QLY.Leetcode.string;
 
 import java.util.HashMap;
 import java.util.Map;

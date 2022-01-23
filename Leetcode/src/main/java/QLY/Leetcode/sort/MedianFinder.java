@@ -1,4 +1,4 @@
-package QLY.Leetcode;
+package QLY.Leetcode.sort;
 
 import java.util.PriorityQueue;
 

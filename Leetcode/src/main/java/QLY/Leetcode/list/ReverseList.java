@@ -1,7 +1,4 @@
-package QLY.Leetcode;
-
-import java.util.LinkedList;
-import java.util.List;
+package QLY.Leetcode.list;
 
 public class ReverseList {
 
