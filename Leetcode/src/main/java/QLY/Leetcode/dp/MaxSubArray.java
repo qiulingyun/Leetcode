@@ -28,8 +28,24 @@ public class MaxSubArray {
         return m;
     }
 
+    public int maxSubArray2(int[] nums) {
+        if (nums == null || nums.length == 0)
+            return 0;
+
+        //状态压缩
+        int dp = nums[0];
+        int result = nums[0];
+        for (int i = 1; i < nums.length; i++){
+            dp = nums[i] + Math.max(dp, 0);
+            result = Math.max(dp, result);
+        }
+
+        return result;
+    }
+
     public static void main(String[] args) {
         MaxSubArray maxSubArray = new MaxSubArray();
         System.out.println(maxSubArray.maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4}));
+        System.out.println(maxSubArray.maxSubArray2(new int[]{-2,1,-3,4,-1,2,1,-5,4}));
     }
 }
