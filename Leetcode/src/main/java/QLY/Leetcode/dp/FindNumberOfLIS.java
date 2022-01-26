@@ -2,6 +2,13 @@ package QLY.Leetcode.dp;
 
 import java.util.Arrays;
 
+/**
+ * https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/
+ * 673. 最长递增子序列的个数
+ * 给定一个未排序的整数数组 nums ， 返回最长递增子序列的个数 。
+ *
+ * 注意 这个数列必须是 严格 递增的。
+ */
 public class FindNumberOfLIS {
     public int findNumberOfLIS(int[] nums) {
         int[] dp = new int[nums.length];    //下标为i的最长递增子序列长度

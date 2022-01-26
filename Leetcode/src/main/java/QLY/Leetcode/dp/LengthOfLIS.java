@@ -7,7 +7,7 @@ public class LengthOfLIS {
 //    输入: [10,9,2,5,3,7,101,18]
 //    输出: 4
 //    解释: 最长的上升子序列是 [2,3,7,101]，它的长度是 4。
-
+// https://leetcode-cn.com/problems/longest-increasing-subsequence/
     public int lengthOfLIS2(int[] nums) {
         if (nums == null || nums.length == 0)
             return 0;
