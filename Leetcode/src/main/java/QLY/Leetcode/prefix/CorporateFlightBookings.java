@@ -1,4 +1,4 @@
-package QLY.Leetcode.array;
+package QLY.Leetcode.prefix;
 
 import java.util.Arrays;
 
