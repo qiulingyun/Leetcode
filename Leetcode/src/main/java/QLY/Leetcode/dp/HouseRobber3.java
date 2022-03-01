@@ -1,5 +1,10 @@
 package QLY.Leetcode.dp;
 
+import QLY.Leetcode.tree.Codec;
+import QLY.Leetcode.tree.TreeNode;
+
+import java.util.HashMap;
+
 /**
  * https://leetcode-cn.com/problems/house-robber-iii/
  * 337. 打家劫舍 III
@@ -34,14 +39,36 @@ package QLY.Leetcode.dp;
  */
 public class HouseRobber3 {
 
-//    public class TreeNode {
-//        int val;
-//        TreeNode left;
-//        TreeNode right;
-//        TreeNode(int x) { val = x; }
-//    }
-//
-//    public int rob(TreeNode root) {
-//
-//    }
+
+    private final HashMap<TreeNode, Integer> map = new HashMap<TreeNode, Integer>(){{put(null, 0);}};
+    public int rob(TreeNode root) {
+        if (root == null)
+            return 0;
+
+        int sum1 = root.val;
+        int sum2 = 0;
+        if (root.left != null){
+            sum2 += rob(root.left);
+            sum1 += map.get(root.left.left);
+            sum1 += map.get(root.left.right);
+        }
+
+        if (root.right != null){
+            sum2 += rob(root.right);
+            sum1 += map.get(root.right.left);
+            sum1 += map.get(root.right.right);
+        }
+
+        map.put(root, Math.max(sum1, sum2));
+
+        return Math.max(sum1, sum2);
+    }
+
+    public static void main(String[] args) {
+        Codec codec = new Codec();
+        TreeNode deserialize = codec.deserialize("3,2,null,3,null,null,3,null,1,null,null");
+
+        HouseRobber3 houseRobber3 = new HouseRobber3();
+        System.out.println(houseRobber3.rob(deserialize));
+    }
 }
