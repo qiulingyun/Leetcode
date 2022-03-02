@@ -8,38 +8,23 @@ import java.util.*;
  * 给定一个数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
  * candidates 中的每个数字在每个组合中只能使用一次。
  * 注意：解集不能包含重复的组合。
+ *
+ * The same with Subsets2
  */
 public class CombinationSumII {
-    class Pair{
-        public int candidate;
-        public int freq;
-
-        public Pair(int candidate, int freq) {
-            this.candidate = candidate;
-            this.freq = freq;
-        }
-    }
 
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-        List<List<Integer>> results = new LinkedList<>();
-
         Arrays.sort(candidates);
-        ArrayList<Pair> candidatesList = new ArrayList<>();
-        for (int candidate : candidates) {
-            if (!candidatesList.isEmpty() && candidatesList.get(candidatesList.size()-1).candidate == candidate){
-                candidatesList.get(candidatesList.size()-1).freq++;
-            }else {
-                candidatesList.add(new Pair(candidate, 1));
-            }
-        }
 
-        backtrace(candidatesList, target, 0, new LinkedList<>(), 0, results);
-
+        backtrace(candidates, target, 0, 0);
 
         return results;
     }
 
-    private void backtrace(ArrayList<Pair> candidatesList, int target, int curr, LinkedList<Integer> path, int sum, List<List<Integer>> results){
+    List<List<Integer>> results = new LinkedList<>();
+    LinkedList<Integer> path = new LinkedList<>();
+
+    private void backtrace(int[] candidates, int target, int curr, int sum){
         if (sum > target){
             return;
         }else if (sum == target){
@@ -47,28 +32,24 @@ public class CombinationSumII {
             return;
         }
 
-        for (int i = curr; i < candidatesList.size(); i++) {
-            Pair candidate = candidatesList.get(i);
+        for (int i = curr; i < candidates.length; i++) {
+            if (i > curr && candidates[i] == candidates[i - 1])
+                continue;
 
-            for (int j = 1; j <= candidate.freq; j++){
-                if (candidate.candidate * j + sum > target)
-                    continue;
+            path.add(candidates[i]);
+            sum += candidates[i];
 
-                for (int k = 0; k < j; k++)
-                    path.add(candidate.candidate);
+            backtrace(candidates, target, i + 1, sum);
 
-                backtrace(candidatesList, target, i+1, path, sum + candidate.candidate * j, results);
-
-                for (int k = 0; k < j; k++)
-                    path.removeLast();
-            }
-
+            path.removeLast();
+            sum -= candidates[i];
         }
     }
 
+
     public static void main(String[] args) {
         CombinationSumII combinationSumII = new CombinationSumII();
-//        System.out.println(combinationSumII.combinationSum2(new int[]{10, 1, 2, 7, 6, 1, 5}, 8));
-        System.out.println(combinationSumII.combinationSum2(new int[]{2, 5, 2, 1, 2}, 5));
+        System.out.println(combinationSumII.combinationSum2(new int[]{10, 1, 2, 7, 6, 1, 5}, 8));
+//        System.out.println(combinationSumII.combinationSum2(new int[]{2, 5, 2, 1, 2}, 5));
     }
 }
