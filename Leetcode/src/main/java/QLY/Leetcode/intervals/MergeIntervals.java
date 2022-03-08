@@ -28,7 +28,7 @@ public class MergeIntervals {
                 curr = intervals[i];
             }
         }
-//        results.add(curr);
+        results.add(curr);
 //        Object[] temp = results.toArray();
 //        int[][] res = new int[temp.length][];
 //        for (int i = 0; i < temp.length; i++){
