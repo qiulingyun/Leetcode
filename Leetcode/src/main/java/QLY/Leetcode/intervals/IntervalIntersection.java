@@ -50,12 +50,14 @@ public class IntervalIntersection {
             }
         }
 
-        Object[] temp = results.toArray();
-        int[][] res = new int[temp.length][];
-        for (int i = 0; i < temp.length; i++){
-            res[i] = (int[]) temp[i];
-        }
-        return res;
+//        Object[] temp = results.toArray();
+//        int[][] res = new int[temp.length][];
+//        for (int i = 0; i < temp.length; i++){
+//            res[i] = (int[]) temp[i];
+//        }
+
+//        return res;
+        return results.toArray(new int[results.size()][]);
     }
 
     public static void main(String[] args) {
