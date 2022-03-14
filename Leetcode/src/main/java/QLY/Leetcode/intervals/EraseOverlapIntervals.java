@@ -1,7 +1,6 @@
-package QLY.Leetcode.greedy;
+package QLY.Leetcode.intervals;
 
 import java.util.Arrays;
-import java.util.PriorityQueue;
 
 /**
  * 435. 无重叠区间

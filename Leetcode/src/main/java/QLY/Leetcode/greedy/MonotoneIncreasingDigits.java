@@ -39,6 +39,6 @@ public class MonotoneIncreasingDigits {
 
     public static void main(String[] args) {
         MonotoneIncreasingDigits monotoneIncreasingDigits = new MonotoneIncreasingDigits();
-        System.out.println(monotoneIncreasingDigits.monotoneIncreasingDigits(10));
+        System.out.println(monotoneIncreasingDigits.monotoneIncreasingDigits(332));
     }
 }
