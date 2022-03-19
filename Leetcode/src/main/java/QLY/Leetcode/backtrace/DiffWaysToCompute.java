@@ -3,6 +3,11 @@ package QLY.Leetcode.backtrace;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * https://leetcode-cn.com/problems/different-ways-to-add-parentheses/
+ * 241. 为运算表达式设计优先级
+ * 给你一个由数字和运算符组成的字符串 expression ，按不同优先级组合数字和运算符，计算并返回所有可能组合的结果。你可以 按任意顺序 返回答案。
+ */
 public class DiffWaysToCompute {
     public List<Integer> diffWaysToCompute(String input) {
         if (input == null || input.isEmpty())
